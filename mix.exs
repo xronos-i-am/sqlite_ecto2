@@ -31,7 +31,8 @@ defmodule Sqlite.Ecto2.Mixfile do
 
   # Dependencies
   defp deps do
-    [{:connection, "~> 1.0.3"},
+    [{:benchfella, "~> 0.3.5", only: :dev},
+     {:connection, "~> 1.0.3"},
      {:coverex, "~> 1.4.11", only: :test},
      {:credo, "~> 0.7", only: [:dev, :test]},
      {:db_connection, "~> 1.1.0"},
