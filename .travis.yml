@@ -17,7 +17,8 @@ matrix:
     otp_release: 18.2
 
 script:
-  - mix deps.get && ./integration/hack_out_incompatible_tests.sh && mix test --cover
+  - mix deps.get
+  - mix test --cover
   - mix dogma
 
 branches:
