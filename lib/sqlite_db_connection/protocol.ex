@@ -160,6 +160,8 @@ defmodule Sqlite.DbConnection.Protocol do
                                           command: command}}
       {:error, {_sqlite_errcode, _message}} = err ->
         sqlite_error(err, s)
+      {:raise, err} ->
+        sqlite_error({:error, {-1, err.message}}, s)
       {:error, :args_wrong_length} ->
         {:error,
          %ArgumentError{message: "parameters must match number of placeholders in query"},
